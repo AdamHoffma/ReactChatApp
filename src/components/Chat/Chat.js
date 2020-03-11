@@ -10,8 +10,6 @@ import Input from '../Input/Input'
 
 import Messages from '../Messages/Messages'
 
-import Message from '../Message/Message'
-
 let socket
 
 const Chat = ({ location }) => {
@@ -20,7 +18,7 @@ const Chat = ({ location }) => {
     const [user, setUsers] = useState('')
     const [messages, setMessages] = useState([])
     const [message, setMessage] = useState("")
-    const ENDPOINT = 'localhost:5000'
+    const ENDPOINT = 'https://react-chat-applicat.herokuapp.com/'
 
     useEffect(() => {
         const { name, room } = queryString.parse(location.search)
