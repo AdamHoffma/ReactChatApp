@@ -1,10 +1,10 @@
 import React from 'react'
 
-import onlineIcon from '../../icons/onlineIcon'
+import onlineIcon from '../../icons/onlineIcon.png'
 
-import './TextContianer.css'
+import './TextContainer.css'
 
-const TextContainer = ({ users }) = (
+const TextContainer = ({ users }) => (
     <div className='textContainer'>
         <div>
             <h1> Realtime Chat Application <span role="img" aria-label="emoji">💬</span></h1>
