@@ -10,6 +10,8 @@ import Input from '../Input/Input'
 
 import Messages from '../Messages/Messages'
 
+import TextContainer from '../TextContainer/TextContainer'
+
 let socket
 
 const Chat = ({ location }) => {
@@ -44,7 +46,17 @@ const Chat = ({ location }) => {
     useEffect(() => {
         socket.on('message', (message) => {
             setMessages([...messages, message])
+        });
+
+        socket.on('roomData', ({ users }) => {
+            setUsers(users)
         })
+
+        return () => {
+            socket.emit('disconnect')
+
+            socket.off()
+        }
     }, [messages])
 
     // function for sending messages
@@ -66,6 +78,7 @@ const Chat = ({ location }) => {
                 <Messages messages={messages} name={name}/>
                 <Input  message={message} setMessage={setMessage} sendMessage={sendMessage}/>                
             </div>
+            <TextContainer users={users} />
         </div>
     )
 }
