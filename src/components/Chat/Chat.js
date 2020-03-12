@@ -17,7 +17,7 @@ let socket
 const Chat = ({ location }) => {
     const [name, setName] = useState("")
     const [room, setRoom]= useState("")
-    const [user, setUsers] = useState('')
+    const [users, setUsers] = useState('')
     const [messages, setMessages] = useState([])
     const [message, setMessage] = useState("")
     const ENDPOINT = 'https://react-chat-applicat.herokuapp.com/'
