@@ -37,6 +37,11 @@ html, body {
     padding-bottom: 10px;
     border-bottom: 2px solid white;
   }
+
+  .heading1 {
+    margin: auto;
+    color: white
+  }
   
   .button {
       color: #fff !important;
